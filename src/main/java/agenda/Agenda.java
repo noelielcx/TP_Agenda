@@ -19,8 +19,6 @@ public class Agenda {
     public List<Event> lesEventsDuJour = new ArrayList<>();
 
     public void addEvent(Event e) {
-        // TODO : implémenter cette méthode
-        // throw new UnsupportedOperationException("Pas encore implémenté");
         lesEvents.add(e);
     }
 
@@ -31,8 +29,6 @@ public class Agenda {
      * @return and iteraror to the events that occur on that day
      */
     public List<Event> eventsInDay(LocalDate day) {
-        // TODO : implémenter cette méthode
-       // throw new UnsupportedOperationException("Pas encore implémenté");
         for (Event e : lesEvents){
             if (e.isInDay(day)){
                 lesEventsDuJour.add(e);

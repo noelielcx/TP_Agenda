@@ -31,8 +31,6 @@ public class FixedTerminationEvent extends RepetitiveEvent {
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, LocalDate terminationInclusive) {
          super(title, start, duration, frequency);
          this.terminationInclusive = terminationInclusive;
-        // TODO : implémenter cette méthode
-       // throw new UnsupportedOperationException("Pas encore implémenté");
 
     }
 
@@ -53,8 +51,7 @@ public class FixedTerminationEvent extends RepetitiveEvent {
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, long numberOfOccurrences) {
         super(title, start, duration, frequency);
         this.numberOfOccurrences = numberOfOccurrences;
-        // TODO : implémenter cette méthode
-       // throw new UnsupportedOperationException("Pas encore implémenté");
+
     }
 
     /**
@@ -64,16 +61,17 @@ public class FixedTerminationEvent extends RepetitiveEvent {
     public LocalDate getTerminationDate() {
         LocalDate terminationDate = this.getStart().plus(numberOfOccurrences-1, this.getFrequency()).toLocalDate();
         return terminationDate;
-        // TODO : implémenter cette méthode
       /* on ajoute à la date de départ le nombre d'occurences dont l'unité est la fréquence
         (par exemple si le nb d'occurence est 10 et la fréquence est semaine on ajoute 10
          semaines a la date de départ). On enlève 1 car la date de départ est deja comptée.*/
     }
 
     public long getNumberOfOccurrences() {
-        // TODO : implémenter cette méthode
-        //throw new UnsupportedOperationException("Pas encore implémenté");
         return numberOfOccurrences;
     }
-        
+
+    @Override
+    public boolean isInDay(LocalDate aDay) {
+
+    }
 }
