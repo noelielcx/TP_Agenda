@@ -1,5 +1,8 @@
 package agenda;
 
+import com.sun.org.apache.xpath.internal.operations.Equals;
+import sun.security.util.Cache;
+
 import java.time.LocalDate;
 import java.util.*;
 
@@ -37,4 +40,25 @@ public class Agenda {
         }
         return lesEventsDuJour;
     }
+
+    public List<Event> findByTitle(String title){
+        ArrayList theTitles = new ArrayList<>();
+        for (Event e : lesEvents){
+          if (e.getTitle().equals(title)){
+              theTitles.add(e);
+          }
+        }
+        return theTitles;
+    }
+
+    public boolean isFree(Event e){
+        LocalDate day = e.getStart().toLocalDate();
+        if (lesEventsDuJour.contains(e)){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
 }
