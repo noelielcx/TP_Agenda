@@ -41,13 +41,12 @@ public class Event {
      * @return true if the event occurs on that day, false otherwise
      */
     public boolean isInDay(LocalDate aDay) {
-        if (aDay.isEqual(ChronoLocalDate.from(myStart)) || aDay.isEqual(ChronoLocalDate.from(myStart).plus(myDuration)) || aDay.isBefore(ChronoLocalDate.from(myStart).plus(myDuration)) && aDay.isAfter(ChronoLocalDate.from(myStart))){
+        if (aDay.isEqual(ChronoLocalDate.from(this.myStart)) || aDay.isEqual(ChronoLocalDate.from(this.myStart).plus(this.myDuration)) || aDay.isBefore(ChronoLocalDate.from(this.myStart).plus(this.myDuration)) && aDay.isAfter(ChronoLocalDate.from(this.myStart))){
             return true;
         }else {
             return false;
         }
-        // TODO : implémenter cette méthode
-       // throw new UnsupportedOperationException("Pas encore implémenté");
+
     }
    
     /**
@@ -72,6 +71,12 @@ public class Event {
         return myDuration;
     }
 
-   
-    
+    @Override
+    public String toString() {
+        return "Event{" +
+                "myTitle='" + myTitle + '\'' +
+                ", myStart=" + myStart +
+                ", myDuration=" + myDuration +
+                '}';
+    }
 }
