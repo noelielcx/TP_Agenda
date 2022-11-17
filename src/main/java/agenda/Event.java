@@ -41,11 +41,17 @@ public class Event {
      * @return true if the event occurs on that day, false otherwise
      */
     public boolean isInDay(LocalDate aDay) {
+        if (aDay.isBefore(ChronoLocalDate.from(this.myStart))|| aDay.isAfter(ChronoLocalDate.from(this.myStart).plus(this.myDuration))) {
+            return false;
+        }else{
+            return true;
+        }
+        /*
         if (aDay.isEqual(ChronoLocalDate.from(this.myStart)) || aDay.isEqual(ChronoLocalDate.from(this.myStart).plus(this.myDuration)) || aDay.isBefore(ChronoLocalDate.from(this.myStart).plus(this.myDuration)) && aDay.isAfter(ChronoLocalDate.from(this.myStart))){
             return true;
         }else {
             return false;
-        }
+        }*/
 
     }
    
