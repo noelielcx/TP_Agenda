@@ -70,8 +70,5 @@ public class FixedTerminationEvent extends RepetitiveEvent {
         return numberOfOccurrences;
     }
 
-    @Override
-    public boolean isInDay(LocalDate aDay) {
 
-    }
 }

@@ -1,10 +1,8 @@
 package agenda;
 
-import com.sun.org.apache.xpath.internal.operations.Equals;
-import sun.security.util.Cache;
-
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Description : An agenda that stores events
