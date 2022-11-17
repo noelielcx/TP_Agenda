@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="agenda-enonce" />
+        <module name="TP_Agenda" />
       </profile>
     </annotationProcessing>
   </component>
